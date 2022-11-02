@@ -1,54 +1,67 @@
 {
-  "name": "webpack-package",
-  "version": "0.1.0",
-  "description": "",
+  "name": "my-webpack-project",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "index.js",
   "scripts": {
-    "test": "jest --colors"
+    "test": "npx jest --bail",
+    "webpack": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode=production --node-env=production",
+    "start": "webpack-dev-server --mode development --open",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "serve": "webpack serve"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexlet-boilerplates/webpack-package.git"
+    "url": "git+https://github.com/newzavod/frontend-project-11"
   },
-  "author": "Kirill Mokevnin",
+  "author": "wow",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hexlet-boilerplates/webpack-package/issues"
+    "url": "https://github.com/newzavod/frontend-project-11/issues"
   },
-  "homepage": "https://github.com/hexlet-boilerplates/webpack-package#readme",
+  "homepage": "https://github.com/newzavod/frontend-project-11#readme",
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/",
     "testEnvironment": "jsdom"
   },
-  "main": "src/init.js",
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.4",
     "@babel/preset-env": "^7.15.4",
     "babel-jest": "^27.1.1",
     "babel-loader": "^8.2.2",
-    "css-loader": "^6.2.0",
+    "css-loader": "^6.7.1",
     "debug": "^4.3.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jest": "^24.4.0",
+    "eslint-webpack-plugin": "^3.2.0",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.2",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^27.1.1",
     "jest-cli": "^27.1.1",
-    "postcss-loader": "^6.1.1",
+    "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^6.7.0",
-    "style-loader": "^3.2.1",
+    "prettier": "^2.7.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
-    "webpack": "^5.52.0",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.1.1"
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1",
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
-    "npm-check-updates": "^11.8.5",
-    "sass": "^1.39.0",
-    "sass-loader": "^12.1.0"
+    "autoprefixer": "10.4.5",
+    "bootstrap": "^5.2.2",
+    "npm-check-updates": "^11.8.5"
   }
 }
