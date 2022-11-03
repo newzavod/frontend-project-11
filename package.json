@@ -54,6 +54,8 @@
   "dependencies": {
     "autoprefixer": "10.4.5",
     "bootstrap": "^5.2.2",
-    "npm-check-updates": "^11.8.5"
+    "npm-check-updates": "^11.8.5",
+    "on-change": "^4.0.1",
+    "yup": "^0.32.11"
   }
 }
