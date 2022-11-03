@@ -4,15 +4,7 @@
   "description": "RSS aggregator",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest --bail",
-    "webpack": "webpack",
-    "watch": "webpack --watch",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode=production --node-env=production",
-    "start": "webpack-dev-server --mode development --open",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production --node-env=production",
-    "serve": "webpack serve"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
