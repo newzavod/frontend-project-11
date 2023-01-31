@@ -1,8 +1,8 @@
 import * as Yup from 'yup';
-import download from './downloader';
-import parse from './parser';
-import save from './saver';
-import { STATUS, ERRORS } from '../constants';
+import download from './downloader.js';
+import parse from './parser.js';
+import save from './saver.js';
+import { STATUS, ERRORS } from '../constants.js';
 
 const errorTypes = {
   notOneOf: ERRORS.URL_NOT_UNIQ,
@@ -10,7 +10,9 @@ const errorTypes = {
 };
 
 const validateUrl = (url, urls) => {
-  const urlFormSchema = Yup.object().shape({ url: Yup.string().trim().url().notOneOf(urls) });
+  const urlFormSchema = Yup.object().shape({
+    url: Yup.string().trim().url().notOneOf(urls),
+  });
 
   return urlFormSchema.validate(url).catch((e) => {
     throw Error(errorTypes[e.type]);

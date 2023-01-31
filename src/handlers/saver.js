@@ -15,7 +15,10 @@ export default ({ feedInfo, feedPosts }, state) => {
   const preparedPosts = feedPosts
     .filter(({ guid }) => !existedPosts.map((post) => post.guid).includes(guid))
     .map((post) => ({
-      feedId, ...post, id: nanoid(6), pubDate: Date.parse(post.pubDate),
+      feedId,
+      ...post,
+      id: nanoid(6),
+      pubDate: Date.parse(post.pubDate),
     }));
 
   rss.posts = [...rss.posts, ...preparedPosts];

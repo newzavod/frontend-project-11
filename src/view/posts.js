@@ -17,9 +17,7 @@ const buildButton = (post, t) => {
 };
 
 const buildLink = (post, isVisited) => {
-  const linkStyles = isVisited
-    ? styles.visited
-    : styles.unvisited;
+  const linkStyles = isVisited ? styles.visited : styles.unvisited;
 
   const link = document.createElement('a');
   link.setAttribute('href', post.link);
@@ -34,7 +32,15 @@ const buildLink = (post, isVisited) => {
 
 const renderPost = (post, isVisited, t) => {
   const postListItem = document.createElement('li');
-  postListItem.classList.add('d-flex', 'justify-content-between', 'border-0', 'rounded-0', 'list-group-item-action', 'list-group-item', 'align-items-center');
+  postListItem.classList.add(
+    'd-flex',
+    'justify-content-between',
+    'border-0',
+    'rounded-0',
+    'list-group-item-action',
+    'list-group-item',
+    'align-items-center'
+  );
 
   postListItem.append(buildLink(post, isVisited, t), buildButton(post, t));
   return postListItem;

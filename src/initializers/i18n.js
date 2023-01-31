@@ -9,6 +9,4 @@ const i18nConfig = {
   },
 };
 
-export default i18next
-  .createInstance()
-  .init(i18nConfig);
+export default i18next.createInstance().init(i18nConfig);
