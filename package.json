@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "RSS aggregator",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,13 +16,8 @@
     "url": "https://github.com/newzavod/frontend-project-11/issues"
   },
   "homepage": "https://github.com/newzavod/frontend-project-11#readme",
-  "jest": {
-    "verbose": true,
-    "testURL": "http://localhost/",
-    "testEnvironment": "jsdom"
-  },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
+    "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.15.4",
     "@babel/preset-env": "^7.15.4",
     "babel-jest": "^27.1.1",
@@ -39,9 +34,10 @@
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.1.1",
     "jest-cli": "^27.1.1",
+    "mini-css-extract-plugin": "^2.7.2",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.3",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
@@ -53,8 +49,11 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.5",
+    "axios": "^1.2.6",
+    "babel-plugin-redux-state-compose": "^0.4.0",
     "bootstrap": "^5.2.2",
-    "npm-check-updates": "^11.8.5",
+    "i18next": "^22.4.9",
+    "npm-check-updates": "^16.6.3",
     "on-change": "^4.0.1",
     "yup": "^0.32.11"
   }

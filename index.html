@@ -1,61 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RSS_aggregator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>RSS Aggregator</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"></h5><button type="button" class="btn-close close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-break"></div>
-                <div class="modal-footer"><a class="btn btn-primary full-article" href="#" role="button" target="_blank"
-                        rel="noopener noreferrer">Читать полностью </a><button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Закрыть</button></div>
-            </div>
+<body class="mx-auto text-body">
+  <header class="bg-dark">
+    <div class="container-fluid p-5">
+      <div class="row">
+        <h1 class="my-4 text-light">RSS Aggregator</h1>
+        <div class="col col-6">
+          <form action="" class="row mb-0">
+            <input type="text" class="col mx-2 form-control" autofocus required aria-label="url" name="url"
+              placeholder="http://" />
+            <button type="submit" class="col-auto mx-2 btn btn-primary">Добавить</button>
+          </form>
+          <div aria-label="hint" class="text-muted">
+            Example: https://ru.hexlet.io/lessons.rss
+          </div>
+          <p aria-label="feedback" class="m-0 small position-absolute"></p>
         </div>
+      </div>
     </div>
-    <main class="flex-grow-1">
-        <section class="container-fluid bg-dark p-5">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto text-white">
-                    <h1 class="display-3 mb-0">RSS агрегатор</h1>
-                    <p class="lead">Начните читать RSS сегодня! Это легко, это красиво.</p>
-                    <form action="" class="rss-form text-body">
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-floating"><input id="url-input" autofocus="" required="" name="url"
-                                        aria-label="url" class="form-control w-100" placeholder="ссылка RSS"
-                                        autocomplete="off"> <label for="url-input">Ссылка RSS</label></div>
-                            </div>
-                            <div class="col-auto"><button type="submit" aria-label="add"
-                                    class="h-100 btn btn-lg btn-primary px-sm-5">Добавить</button></div>
-                        </div>
-                    </form>
-                    <p class="mt-2 mb-0 text-muted">Пример: https://ru.hexlet.io/lessons.rss</p>
-                    <p class="feedback m-0 position-absolute small text-danger"></p>
-                </div>
-            </div>
-        </section>
-        <section class="container-fluid container-xxl p-5">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 order-1 mx-auto posts"></div>
-                <div class="col-md-10 col-lg-4 mx-auto order-0 order-lg-1 feeds"></div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer border-top py-3 mt-5 bg-light">
-        <div class="container-xl">
-            <div class="text-center">created by newzavod</a></div>
+  </header>
+  <section class="container mt-2">
+    <div class="row">
+      <div class="col-xs-10 col-md-10 col-lg-8 py-2 posts order-1"></div>
+      <div class="col-xs-10 col-md-10 col-lg-4 py-2 feeds order-lg-1 order-0"></div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="viewPostDetails" tabindex="-1" aria-labelledby="viewPostDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title fs-4" id="viewPostDetailsLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </footer>
+        <div class="modal-body fs-5"></div>
+        <div class="modal-footer">
+          <a role="button" class="btn btn-primary" id="readPostButton">Читать</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
