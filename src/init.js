@@ -13,9 +13,7 @@ const addPostsEventListener = (postContainer, state) => {
     const { postId } = e.target.dataset;
     state.visitedPostIds = [...state.visitedPostIds, postId];
     if (e.target.tagName === 'BUTTON') {
-      state.postInModalWindow = state.rss.posts.find(
-        (post) => post.id === postId,
-      );
+      state.postInModalWindow = state.rss.posts.find((post) => post.id === postId);
     }
   });
 };
@@ -23,16 +21,14 @@ const addPostsEventListener = (postContainer, state) => {
 const refetchFeeds = (state) => {
   const urls = getUrls(state);
 
-  Promise.all(
-    urls.map((url) =>
-      download(url).then(({ data }) => {
-        const feedData = parse({ data, url });
-        save(feedData, state);
-      }),
-    )
-  ).finally(() => {
-    setTimeout(() => refetchFeeds(state), DELAY);
-  });
+  Promise.all(urls.map((url) => download(url)
+    .then(({ data }) => {
+      const feedData = parse({ data, url });
+      save(feedData, state);
+    })))
+    .finally(() => {
+      setTimeout(() => refetchFeeds(state), DELAY);
+    });
 };
 
 export default () => {
