@@ -39,7 +39,7 @@ const renderPost = (post, isVisited, t) => {
     'rounded-0',
     'list-group-item-action',
     'list-group-item',
-    'align-items-center'
+    'align-items-center',
   );
 
   postListItem.append(buildLink(post, isVisited, t), buildButton(post, t));

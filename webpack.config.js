@@ -14,17 +14,22 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html'),
+      template: 'index.html',
     }),
     new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
-      // {
-      //   test: /\.(js)$/i,
-      //   exclude: /node_modules/,
-      //   use: ['babel-loader'],
-      // },
+      {
+        test: /\.(js)$/i,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.html$/i,
+        exclude: /node_modules/,
+        loader: 'html-loader',
+      },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: 'asset',
