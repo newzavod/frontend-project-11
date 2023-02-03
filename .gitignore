@@ -2,4 +2,5 @@
 *.log
 dist
 assets
-.eslintrc.yml
+eslintrc.yml
+vscode
